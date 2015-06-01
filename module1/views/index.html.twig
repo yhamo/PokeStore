@@ -1,0 +1,55 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+    <!DOCTYPE HML>
+    <div class="jumbotron">
+
+
+        <div class="row">
+            <div class="col-md-5">
+                <img class="img-responsive" style="border-radius: 7px; border:4px solid white; box-shadow: 1px 1px 10px #555;" src="{{ app.request.basepath }}images/Accueil.png" alt="Logo GSB"/>
+            </div>
+            <div class="col-md-4">
+                <div class="page-header">
+                    <h1>PokeStore <div class="container">
+
+                            <object class="audiocontrols" type="audio/mpeg" data="/mp3/Kalimba.mp3" 
+                                    <param name="src" value="/mp3/Kalimba.mp3" />
+                                <param name="type" value="audio/mpeg" /></object>
+
+
+                        </div><br><small>Vente de pokémons en ligne<br>Choisissez une catégorie :<br>
+                            <form class="form-horizontal" role="form" action="/results/" method="post">
+                                <div class="form-group">
+
+                                    <div class="col-sm-7">
+                                        <select class="form-control" name="type">
+                                            {% for type in types %}
+                                                <option value="{{ type.id }}">{{ type.label }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm3 col-sm-offset-2">
+
+                                        <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-search"></span> Valider</button>
+
+
+
+                                    </div>
+                                </div>
+
+
+                            </form>
+
+                            </div>
+                            </div>
+
+                            </div>
+                            </div>
+
+
+                        {% endblock %}

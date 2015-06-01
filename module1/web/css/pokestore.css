@@ -1,0 +1,18 @@
+body { 
+    padding-top: 70px; 
+}
+
+h1 small {
+    font-size: 24px;
+}
+.adminTable {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.body > video {
+    background-color: #F2F22E;
+    color: #F2F22E;
+}
+
+

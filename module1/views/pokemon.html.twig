@@ -1,0 +1,51 @@
+{% extends "layout.html.twig" %}
+{% set PokeMenu = true %}
+
+{% block title %}{{ pokemon.namepokemon }}{% endblock %}
+
+{% block content %}
+    <h2 class="text-center">{{ block('title') }}</h2>
+    <div class="well">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Type</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static">{{ pokemon.Type.label }}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Nom </label>
+                <div class="col-sm-9">
+                    <p class="form-control-static">{{ pokemon.namepokemon }}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"> Nom du fabricant</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static">{{ pokemon.nameManufacturer }}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Prix </label>
+                <div class="col-sm-9">
+                    <p class="form-control-static">{{ pokemon.prix }}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"> Description </label>
+                <div class="col-sm-9">
+                    <p class="form-control-static">{{ pokemon.description }}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"> Image </label>
+                <div class="col-sm-9">
+                    <p class="form-control-static"><img class="img-responsive" style="border-radius: 7px; border:4px solid white; box-shadow: 1px 1px 10px #555;" src="{{ app.request.basepath }}../{{pokemon.image}}" alt="Logo pika"/>
+                    </p>
+                </div>
+            </div>
+                
+
+        </form>
+    </div>
+{% endblock %}

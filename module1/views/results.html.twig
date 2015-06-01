@@ -1,0 +1,35 @@
+{% extends "layout.html.twig" %}
+{% set PokeMenu = true %}
+
+{% block title %}Pokemons{% endblock %}
+
+{% block content %}
+    <h2 class="text-center">{{ block('title') }}</h2>
+    
+    <div class="col-sm hidden-xs">
+        <div class="table-responsive">
+        <table class="table">
+        {% if pokemons %}
+        {% for pokemon in pokemons %}
+            <div align="center">
+                <td> <a href="/pokemons/{{ pokemon.id }}"   title="{{pokemon.namepokemon}}" ><img class="img-responsive" style="border-radius: 7px; border:4px solid white; box-shadow: 1px 1px 10px #555; width: 80px; height: 80px;" src="{{ app.request.basepath }}{{pokemon.image}}" /></a></td>
+            </div>
+        {% endfor %}
+         </table>
+    </div>
+    {% else %}
+        <div class="alert alert-warning">Aucun pokemon trouvé.</div>
+    {% endif %}
+    </div>
+    <div class="col-xs hidden-lg hidden-md hidden-sm" >
+    {% if pokemons %}
+        {% for pokemon in pokemons %}
+            <div align="center">
+                <a href="/pokemons/{{ pokemon.id }}"   title="{{pokemon.namepokemon}}" ><img class="img-responsive" style="border-radius: 7px; border:4px solid white; box-shadow: 1px 1px 10px #555; width: 100px; height: 100px;" src="{{ app.request.basepath }}{{pokemon.image}}" /></a><br>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-warning">Aucun pokemon trouvé.</div>
+    {% endif %}
+    </div>
+{% endblock %}{# empty Twig template #}
